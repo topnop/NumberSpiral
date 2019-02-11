@@ -1,0 +1,37 @@
+﻿@model NumberSpiral.Models.SpiralModel
+
+@{
+    ViewBag.Title = "Spiral";
+}
+
+<h2>Spiral</h2>
+
+<table>
+    @for (int iDx = 0; iDx < Model.RowColCount; iDx++)
+    {
+    <tr>
+        @for (int iJx = 0; iJx < Model.RowColCount; iJx++)
+        {
+        <td>
+            @if (Model.SpiralMatrix[iDx, iJx] > -1)
+            {
+                <text>@Model.SpiralMatrix[iDx, iJx]</text>
+            }
+        </td>
+        }
+    </tr>
+    }
+</table>
+<div>
+    @Html.ActionLink("Back To Home", "Index")
+</div>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+</style>
